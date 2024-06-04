@@ -22,6 +22,4 @@ Sau khi ghép các kí tự ta được ```userrole = @dmiN```
 
 Đăng nhập vào và lấy flag thôi.
 
-*Flag: CHH{J5fuCk_is_s0_mE5s_ad39dbe21de1d26f87c85ecc1d07115b}
-
-*
+*Flag: CHH{J5fuCk_is_s0_mE5s_ad39dbe21de1d26f87c85ecc1d07115b}*
