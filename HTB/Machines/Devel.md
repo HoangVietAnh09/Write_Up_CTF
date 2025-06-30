@@ -32,6 +32,19 @@ Sau khi run mình đã tạo kết nối thành công
 
 Từ đây mình đọc được flag của user
 
+Tiếp đến sử dụng module có tên là post/multi/recon/local_exploit_suggester để tìm kiếm các lỗ hổng trên máy chủ hiện tại
+
+![image](https://github.com/user-attachments/assets/6a2bfef5-1a23-4aa4-83bd-8f30f2dd8c5a)
+
+Thử xem các options cần set cho module ta thấy cần phải thêm session của reverse shell hiện tại
+
+![image](https://github.com/user-attachments/assets/c0ff176d-c0a3-425a-b98e-888117086ebb)
+
+Sử dụng lệnh `sessions` để xem cá tiến trình hiện tại
+
+
+
+
 
 
 
